@@ -1,7 +1,7 @@
 # tornado-extensions
 some simple demos  to use tornado (python3.5+)\
 1、tornado+redis   \
-    tips: aim at a extension use just like drf-extensions to increased performance 
+    tips: aim at a extension use just like drf-extensions to increased performance \ 
 2、tornado+ celery \
     fulture \
 3、tornado + elasticsearch \
