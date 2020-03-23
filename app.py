@@ -8,7 +8,6 @@ from tornado.ioloop import IOLoop
 from tornado.httpserver import HTTPServer
 from tornado.options import define, options, parse_command_line, parse_config_file
 import tornado.autoreload
-
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 from urls import handlers
