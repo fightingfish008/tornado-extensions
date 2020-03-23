@@ -3,7 +3,7 @@ import os
 
 from tornado.options import options
 
-
+# print(options.as_dict())
 LOG_CONFIG = {
     'version': 1,
     'disable_existing_loggers': False, # 是否禁止已经存在的日志器
@@ -26,7 +26,7 @@ LOG_CONFIG = {
             'level': 'INFO',
             # 'class': 'logging.handlers.RotatingFileHandler',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(options.logbase+"-info.log"),  # 日志文件的位置
+            'filename': os.path.join('/Users/apple/logs/uat/tornado-extension'+"-info.log"),  # 日志文件的位置
             'backupCount': 0,
             'interval': 1,
             'when': 'D',
@@ -36,7 +36,7 @@ LOG_CONFIG = {
             'level': 'ERROR',
             # 'class': 'logging.handlers.RotatingFileHandler',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename':  os.path.join(options.logbase+ "-error.log"),  # 日志文件的位置
+            'filename':  os.path.join('/Users/apple/logs/uat/tornado-extension'+ "-error.log"),  # 日志文件的位置
             'backupCount': 0,
             'interval': 1,
             'when': 'D',
@@ -46,7 +46,7 @@ LOG_CONFIG = {
             'level': 'WARN',
             # 'class': 'logging.handlers.RotatingFileHandler',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(options.logbase+"-warn.log"),  # 日志文件的位置
+            'filename': os.path.join('/Users/apple/logs/uat/tornado-extension'+"-warn.log"),  # 日志文件的位置
             'backupCount': 0,
             'interval': 1,
             'when': 'D',
@@ -61,5 +61,6 @@ LOG_CONFIG = {
         }
     }
 }
+
 
 logging.config.dictConfig(LOG_CONFIG)

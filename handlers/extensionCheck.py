@@ -31,6 +31,7 @@ class ExtensionCheck(EntityHandler):
 
         # 检查是否有缓存
         resRedis = await self.redis.get(res)
+        logger.info("asafdafdafd")
 
         if resRedis is None:
             logger.info("insert redis")

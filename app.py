@@ -24,10 +24,10 @@ class Application(web.Application):
         tornado.ioloop.IOLoop.configure('tornado.platform.asyncio.AsyncIOMainLoop')
 
         settings = dict(
-            # debug=options.debug,
-            # xsrf_cookies=options.xsrf_cookies,
+            debug=options.debug,
+            xsrf_cookies=options.xsrf_cookies,
             # cookie_secret=options.cookie_secret,
-            # login_url=options.login_url,
+            login_url=options.login_url,
         )
         super(Application, self).__init__(handlers, **settings)
 
@@ -37,8 +37,9 @@ def main():
     parse_command_line()
 
     if options.env == "apple":
-        logging.info("use apple conf")
+
         parse_config_file(os.path.join(os.path.dirname(__file__), "conf/apple_app.conf"))
+        logging.info("use apple conf")
     else:
         logging.info("error:  unknow conf")
         assert False

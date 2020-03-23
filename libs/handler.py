@@ -6,7 +6,7 @@ import logging
 from tornado.web import RequestHandler, HTTPError
 from tornado.options import options
 from libs.const import MsgCode, PageCode
-# from common import LogConfig
+from common import LogConfig
 import time
 
 logger = logging.getLogger('myapp')
