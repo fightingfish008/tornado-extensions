@@ -9,14 +9,10 @@ from tornado.httpserver import HTTPServer
 from tornado.options import define, options, parse_command_line, parse_config_file
 import tornado.autoreload
 
-try:
-    import rx
-except ImportError:
-    import sys
-    sys.path.append(os.path.join(os.path.dirname(__file__)))
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__)))
 from urls import handlers
 from libs.utils import parse_config_file
-
 from libs import redis
 from libs import mongodb
 from libs import mysql
