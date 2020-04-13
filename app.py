@@ -3,6 +3,7 @@
 import os
 import asyncio
 import tornado
+from py_eureka_client import eureka_client
 from tornado import web
 from tornado.ioloop import IOLoop
 from tornado.httpserver import HTTPServer
@@ -50,7 +51,18 @@ def main():
         idle_connection_timeout=options.idle_connection_timeout,
         xheaders=True
     )
+    # 加到erueka 注册中心
+    eureka_client.init_registry_client(eureka_server="http://192.168.2.64:8761/eureka/",
+                            app_name = "tornado-extensions",
+                            instance_port =int(options.port))
 
+    # your_rest_server_port = int(options.port)
+    # your_rest_server_host = 'http://192.168.2.64'
+    # # The flowing code will register your server to eureka server and also start to send heartbeat every 30 seconds
+    # eureka_client.init(eureka_server="http://192.168.2.45:8761/eureka/",
+    #                    app_name="tornado-extensions",
+    #                    instance_host=your_rest_server_host,
+    #                    instance_port=your_rest_server_port)
     http_server.bind(int(options.port))
     http_server.start()
     loop = asyncio.get_event_loop()
