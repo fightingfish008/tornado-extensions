@@ -56,13 +56,6 @@ def main():
                             app_name = "tornado-extensions",
                             instance_port =int(options.port))
 
-    # your_rest_server_port = int(options.port)
-    # your_rest_server_host = 'http://192.168.2.64'
-    # # The flowing code will register your server to eureka server and also start to send heartbeat every 30 seconds
-    # eureka_client.init(eureka_server="http://192.168.2.45:8761/eureka/",
-    #                    app_name="tornado-extensions",
-    #                    instance_host=your_rest_server_host,
-    #                    instance_port=your_rest_server_port)
     http_server.bind(int(options.port))
     http_server.start()
     loop = asyncio.get_event_loop()
