@@ -1,0 +1,1 @@
+短信相关：celery -A celery_tasks.main worker -l info  --config=celery_tasks.dev_flag
