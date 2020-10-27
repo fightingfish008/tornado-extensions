@@ -8,7 +8,7 @@ celery==3.1.25
 certifi==2018.10.15
 cffi==1.11.5
 chardet==3.0.4
-cryptography==2.3.1
+cryptography==3.2
 greenlet==0.4.15
 hiredis==0.2.0
 idna==2.7
