@@ -5,7 +5,7 @@ asn1crypto==0.24.0
 async-timeout==2.0.1
 billiard==3.3.0.23
 celery==3.1.25
-certifi==2018.10.15
+certifi==2022.12.7
 cffi==1.11.5
 chardet==3.0.4
 cryptography==2.3.1
